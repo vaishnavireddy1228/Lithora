@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lithora | Scan Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header class="navbar">
+    <a href="/" class="brand">
+        <span class="brand-icon">L</span>
+        <span>LITHORA</span>
+    </a>
+    <span class="nav-label">● RESEARCH PROTOTYPE</span>
+</header>
+
+<main class="results-container">
+
+    <section class="results-heading">
+        <div>
+            <span class="eyebrow">SCAN ANALYSIS</span>
+            <h1>Scan results<span class="heading-dot">.</span></h1>
+            <p>Review your uploaded image and the model's experimental output.</p>
+        </div>
+        <a href="{{ url_for('upload_page') }}" class="secondary-button">
+            ← New scan
+        </a>
+    </section>
+
+    <section class="results-grid">
+
+        <article class="card image-card">
+            <span class="eyebrow">UPLOADED IMAGE</span>
+            <h2>CT scan preview</h2>
+
+            <div class="scan-frame">
+                <img src="{{ image_url }}" alt="Uploaded CT scan" class="scan-image">
+            </div>
+
+            <div class="image-metadata">
+                <span>Width: <strong>{{ width }} px</strong></span>
+                <span>Height: <strong>{{ height }} px</strong></span>
+            </div>
+        </article>
+
+        <article class="card output-card">
+            <span class="eyebrow">MODEL OUTPUT</span>
+            <h2>Classification result</h2>
+
+            <span class="waiting-badge">
+                <span class="status-dot"></span> Analysis completed
+            </span>
+
+            <p class="output-description">
+                The experimental model processed your uploaded image.
+            </p>
+
+            <div class="result-panel">
+                <span class="result-label">Predicted class</span>
+                <p class="result-value">{{ prediction }}</p>
+            </div>
+
+            {% if probability is defined %}
+            <div class="probability-row">
+                <span>Model score</span>
+                <strong>{{ "%.1f"|format(probability) }}%</strong>
+            </div>
+            <p class="score-note">
+                This score is the model's output, not a clinically validated
+                probability that a kidney stone is present.
+            </p>
+            {% endif %}
+
+            <div class="disclaimer">
+                <strong>Research use only</strong>
+                <p>
+                    This prototype is not clinically validated. Predictions
+                    may be incorrect and must not be used for medical decisions.
+                </p>
+            </div>
+
+            <a href="{{ url_for('upload_page') }}" class="analyze-button">
+                Analyze another image →
+            </a>
+        </article>
+
+    </section>
+
+</main>
+
+<footer class="footer">
+    <a href="/" class="footer-brand">LITHORA</a>
+    <span>Experimental kidney CT image classification</span>
+</footer>
+
+</body>
+</html>

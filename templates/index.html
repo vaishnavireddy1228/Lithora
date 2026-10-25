@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#142c3e">
+
+    <title>Lithora | Kidney CT Analysis</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <header class="navbar">
+        <a href="{{ url_for('home') }}" class="brand">
+            <span class="brand-icon">L</span>
+            <span>LITHORA</span>
+        </a>
+
+        <span class="nav-label">
+            ● RESEARCH PROTOTYPE
+        </span>
+    </header>
+
+
+    <main>
+
+        <!-- HOME PAGE HERO -->
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <span class="eyebrow">
+                    AI-POWERED MEDICAL IMAGE RESEARCH
+                </span>
+
+                <h1>
+                    Smarter insights.<br>
+                    Clearer perspectives.
+                </h1>
+
+                <p>
+                    Explore experimental AI-based classification
+                    of kidney CT images through a simple,
+                    accessible research platform.
+                </p>
+
+                <!-- OPENS SEPARATE UPLOAD PAGE -->
+                <a href="{{ url_for('upload_page') }}"
+                   class="hero-button">
+                    Try Now →
+                </a>
+
+                <span class="hero-note">
+                    For research and educational use only
+                </span>
+
+            </div>
+
+
+            <div class="hero-visual">
+
+                <div class="scan-decoration">
+                    L
+                </div>
+
+                <div class="scan-caption">
+                    KIDNEY CT ANALYSIS
+                    <br>
+                    <span>Medical image research</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- HOW IT WORKS -->
+        <section class="how-section">
+
+            <span class="eyebrow">
+                SIMPLE WORKFLOW
+            </span>
+
+            <h2>How it works</h2>
+
+            <p class="section-description">
+                Three simple steps to explore
+                the experimental model.
+            </p>
+
+
+            <div class="steps-grid">
+
+                <!-- STEP 1 -->
+                <article class="step-card">
+
+                    <div class="step-icon">↑</div>
+
+                    <span class="step-number">
+                        STEP 01
+                    </span>
+
+                    <h3>Upload a scan</h3>
+
+                    <p>
+                        Select an axial kidney CT image
+                        in JPG or PNG format.
+                    </p>
+
+                </article>
+
+
+                <!-- STEP 2 -->
+                <article class="step-card">
+
+                    <div class="step-icon">◎</div>
+
+                    <span class="step-number">
+                        STEP 02
+                    </span>
+
+                    <h3>Run the analysis</h3>
+
+                    <p>
+                        Submit the image to the current
+                        experimental classification model.
+                    </p>
+
+                </article>
+
+
+                <!-- STEP 3 -->
+                <article class="step-card">
+
+                    <div class="step-icon">✓</div>
+
+                    <span class="step-number">
+                        STEP 03
+                    </span>
+
+                    <h3>View the output</h3>
+
+                    <p>
+                        Review the model's predicted class
+                        and the uploaded CT image.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESEARCH DISCLAIMER -->
+        <section class="disclaimer">
+
+            <strong>Research use only</strong>
+
+            <p>
+                Lithora is an experimental research prototype,
+                not a clinically validated diagnostic tool.
+                Its predictions may be incorrect and must
+                not be used for medical decisions.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <a href="{{ url_for('home') }}"
+           class="footer-brand">
+            LITHORA
+        </a>
+
+        <span>
+            Experimental kidney CT image classification
+        </span>
+
+    </footer>
+
+</body>
+</html>
